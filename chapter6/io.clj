@@ -24,6 +24,7 @@
   (with-open [writer (make-writer dst)]
     (.write writer (str content))))
 
+(comment 
 (extend-protocol IOFactory
   InputStream
   (make-reader [src]
@@ -71,3 +72,4 @@
        (-> dst .getPath FileInputStream.)
        (throw (IllegalArgumentException.
                "Can't write to non-file URL"))))))
+)
